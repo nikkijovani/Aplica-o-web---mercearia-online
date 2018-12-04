@@ -5,11 +5,19 @@
  */
 package br.edu.iff.merceariaonline;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author aluno
  */
-public class Endereco {
+@Entity
+@Table(name= "endereco")
+public class Endereco implements Serializable {
 
     /**
      * @return the CodEndereco
@@ -21,7 +29,7 @@ public class Endereco {
     /**
      * @param CodEndereco the CodEndereco to set
      */
-    public void setCodEndereco(int CodEndereco) {
+    public void setCodEndereco(Integer CodEndereco) {
         this.CodEndereco = CodEndereco;
     }
 
@@ -70,14 +78,14 @@ public class Endereco {
     /**
      * @return the NumeroDaCasa
      */
-    public int getNumeroDaCasa() {
+    public Integer getNumeroDaCasa() {
         return NumeroDaCasa;
     }
 
     /**
      * @param NumeroDaCasa the NumeroDaCasa to set
      */
-    public void setNumeroDaCasa(int NumeroDaCasa) {
+    public void setNumeroDaCasa(Integer NumeroDaCasa) {
         this.NumeroDaCasa = NumeroDaCasa;
     }
 
@@ -94,11 +102,23 @@ public class Endereco {
     public void setComplemento(String Complemento) {
         this.Complemento = Complemento;
     }
-    private int CodEndereco;
+    @Id
+    @Column(name="end_cd_enderco")
+    private Integer CodEndereco;
+    @Id
+    @Column(name="end_nm_cidade")
     private String NomeDaCidade;
+    @Id
+    @Column(name="end_ds_cep")
     private String Cep;
+    @Id
+    @Column(name="end_nm_rua")
     private String NomeDaRua;
-    private int NumeroDaCasa;
+    @Id
+    @Column(name="end_nr_casa")
+    private Integer NumeroDaCasa;
+    @Id
+    @Column(name="end_ds_complemento")
     private String Complemento;
      
 }

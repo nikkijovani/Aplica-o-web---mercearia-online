@@ -5,25 +5,32 @@
  */
 package br.edu.iff.merceariaonline;
 
+import java.io.Serializable;
 import java.sql.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author aluno
  */
-public class Cliente {
+@Entity
+@Table(name = "cliente")
+public class Cliente implements Serializable {
 
     /**
      * @return the CodCliente
      */
-    public int getCodCliente() {
+    public Integer getCodCliente() {
         return CodCliente;
     }
 
     /**
      * @param CodCliente the CodCliente to set
      */
-    public void setCodCliente(int CodCliente) {
+    public void setCodCliente(Integer CodCliente) {
         this.CodCliente = CodCliente;
     }
 
@@ -58,42 +65,42 @@ public class Cliente {
     /**
      * @return the NumeroTelefone
      */
-    public int getNumeroTelefone() {
+    public Integer getNumeroTelefone() {
         return NumeroTelefone;
     }
 
     /**
      * @param NumeroTelefone the NumeroTelefone to set
      */
-    public void setNumeroTelefone(int NumeroTelefone) {
+    public void setNumeroTelefone(Integer NumeroTelefone) {
         this.NumeroTelefone = NumeroTelefone;
     }
 
     /**
      * @return the NumeroCpf
      */
-    public int getNumeroCpf() {
+    public Integer getNumeroCpf() {
         return NumeroCpf;
     }
 
     /**
      * @param NumeroCpf the NumeroCpf to set
      */
-    public void setNumeroCpf(int NumeroCpf) {
+    public void setNumeroCpf(Integer NumeroCpf) {
         this.NumeroCpf = NumeroCpf;
     }
 
     /**
      * @return the NumeroRg
      */
-    public int getNumeroRg() {
+    public Integer getNumeroRg() {
         return NumeroRg;
     }
 
     /**
      * @param NumeroRg the NumeroRg to set
      */
-    public void setNumeroRg(int NumeroRg) {
+    public void setNumeroRg(Integer NumeroRg) {
         this.NumeroRg = NumeroRg;
     }
 
@@ -110,12 +117,26 @@ public class Cliente {
     public void setSenha(String Senha) {
         this.Senha = Senha;
     }
-    private int CodCliente;
+    @Id
+    @Column(name = "clie_cd_cliente")
+    private Integer CodCliente;
+    @Id
+    @Column(name = "clie_nm_nome")
     private String NomeCliente;
+    @Id
+    @Column(name = "clie_dt_nascimento")
     private Date DataDeNascimento;
-    private int NumeroTelefone;
-    private int NumeroCpf;
-    private int NumeroRg;
+    @Id
+    @Column(name = "clie_nr_telefone")
+    private Integer NumeroTelefone;
+    @Id
+    @Column(name = "clie_nr_cpf")
+    private Integer NumeroCpf;
+    @Id
+    @Column(name = "clie_nr_rg")
+    private Integer NumeroRg;
+    @Id
+    @Column(name = "clie_ds_senha")
     private String Senha;
      
 }

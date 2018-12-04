@@ -5,25 +5,32 @@
  */
 package br.edu.iff.merceariaonline;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author aluno
  */
-public class Produto {
+@Entity
+@Table(name="produto")
+public class Produto implements Serializable {
 
     /**
      * @return the CodProduto
      */ 
-    public int getCodProduto() {
+    public Integer getCodProduto() {
         return CodProduto;
     }
 
     /**
      * @param CodProduto the CodProduto to set
      */
-    public void setCodProduto(int CodProduto) {
+    public void setCodProduto(Integer CodProduto) {
         this.CodProduto = CodProduto;
     }
 
@@ -68,8 +75,16 @@ public class Produto {
     public void setNomeDaMarca(String NomeDaMarca) {
         this.NomeDaMarca = NomeDaMarca;
     }
-    private int CodProduto;
+    @Id
+    @Column(name = "prod_cd_produto")
+    private Integer CodProduto;
+    @Id
+    @Column(name = "prod_nm_nome")
     private String NomeDoProduto;
+    @Id
+    @Column(name = "prod_vl_unidade")
     private BigDecimal ValorDaUnidade;
+    @Id
+    @Column(name = "prod_nm_marca")
     private String NomeDaMarca; 
 }

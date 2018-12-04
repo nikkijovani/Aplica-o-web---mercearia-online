@@ -5,26 +5,33 @@
  */
 package br.edu.iff.merceariaonline;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.sql.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  *
  * @author aluno
  */
-public class Compra {
+@Entity
+@Table(name="compra")
+public class Compra implements Serializable {
 
     /**
      * @return the CodCompra
      */
-    public int getCodCompra() {
+    public Integer getCodCompra() {
         return CodCompra;
     }
 
     /**
      * @param CodCompra the CodCompra to set
      */
-    public void setCodCompra(int CodCompra) {
+    public void setCodCompra(Integer CodCompra) {
         this.CodCompra = CodCompra;
     }
 
@@ -55,8 +62,14 @@ public class Compra {
     public void setValorTotal(BigDecimal ValorTotal) {
         this.ValorTotal = ValorTotal;
     }
-    private int CodCompra;
+    @Id
+    @Column(name = "comp_cd_compra")
+    private Integer CodCompra;
+    @Id
+    @Column(name = "comp_dt_data")
     private Date DataDaCompra;
+    @Id
+    @Column(name = "comp_vl_total")
     private BigDecimal ValorTotal;
     
     

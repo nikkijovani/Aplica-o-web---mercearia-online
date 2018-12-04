@@ -5,23 +5,31 @@
  */
 package br.edu.iff.merceariaonline;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author aluno
  */
-public class Administrador {
+@Entity
+@Table(name = "administrador")
+public class Administrador implements Serializable {
 
     /**
      * @return the CodAdministrador
      */
-    public int getCodAdministrador() {
+    public Integer getCodAdministrador() {
         return CodAdministrador;
     }
 
     /**
      * @param CodAdministrador the CodAdministrador to set
      */
-    public void setCodAdministrador(int CodAdministrador) {
+    public void setCodAdministrador(Integer CodAdministrador) {
         this.CodAdministrador = CodAdministrador;
     }
 
@@ -42,28 +50,28 @@ public class Administrador {
     /**
      * @return the NumeroCpf
      */
-    public int getNumeroCpf() {
+    public Integer getNumeroCpf() {
         return NumeroCpf;
     }
 
     /**
      * @param NumeroCpf the NumeroCpf to set
      */
-    public void setNumeroCpf(int NumeroCpf) {
+    public void setNumeroCpf(Integer NumeroCpf) {
         this.NumeroCpf = NumeroCpf;
     }
 
     /**
      * @return the NumeroTelefone
      */
-    public int getNumeroTelefone() {
+    public Integer getNumeroTelefone() {
         return NumeroTelefone;
     }
 
     /**
      * @param NumeroTelefone the NumeroTelefone to set
      */
-    public void setNumeroTelefone(int NumeroTelefone) {
+    public void setNumeroTelefone(Integer NumeroTelefone) {
         this.NumeroTelefone = NumeroTelefone;
     }
 
@@ -80,11 +88,20 @@ public class Administrador {
     public void setSenha(String Senha) {
         this.Senha = Senha;
     }
-    
-    private int CodAdministrador;
+    @Id
+    @Column(name = "adm_cd_administrador")
+    private Integer CodAdministrador;
+    @Id
+    @Column(name = "adm_nm_nome")
     private String NomeAdministrador;
-    private int NumeroCpf;
-    private int NumeroTelefone;
+    @Id
+    @Column(name="adm_nr_cpf")
+    private Integer NumeroCpf;
+    @Id
+    @Column(name = "adm_nr_telefone")
+    private Integer NumeroTelefone;
+    @Id
+    @Column(name = "adm_ds_senha")
     private String Senha;
       
     

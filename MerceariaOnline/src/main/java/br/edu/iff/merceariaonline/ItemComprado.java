@@ -5,56 +5,70 @@
  */
 package br.edu.iff.merceariaonline;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author aluno
  */
-public class ItemComprado {
+@Entity
+@Table(name = "item_comprado")
+public class ItemComprado implements Serializable {
 
     /**
      * @return the CodItemComprado
      */
-    public int getCodItemComprado() {
+    public Integer getCodItemComprado() {
         return CodItemComprado;
     }
 
     /**
      * @param CodItemComprado the CodItemComprado to set
      */
-    public void setCodItemComprado(int CodItemComprado) {
+    public void setCodItemComprado(Integer CodItemComprado) {
         this.CodItemComprado = CodItemComprado;
     }
 
     /**
      * @return the Quantidade
      */
-    public int getQuantidade() {
+    public Integer getQuantidade() {
         return Quantidade;
     }
 
     /**
      * @param Quantidade the Quantidade to set
      */
-    public void setQuantidade(int Quantidade) {
+    public void setQuantidade(Integer Quantidade) {
         this.Quantidade = Quantidade;
     }
 
     /**
      * @return the QuantidadeTotal
      */
-    public int getQuantidadeTotal() {
+    public Integer getQuantidadeTotal() {
         return QuantidadeTotal;
     }
 
     /**
      * @param QuantidadeTotal the QuantidadeTotal to set
      */
-    public void setQuantidadeTotal(int QuantidadeTotal) {
+    public void setQuantidadeTotal(Integer QuantidadeTotal) {
         this.QuantidadeTotal = QuantidadeTotal;
     }
-    private int CodItemComprado;
-    private int Quantidade;
-    private int QuantidadeTotal;
+    @Id
+    @Column(name = "item_cd_itemcomprado")
+    private Integer CodItemComprado;
+    @Id
+    @Column(name = "item_nr_quantidade")
+    private Integer Quantidade;
+    @Id
+    @Column(name = "item_nr_total")
+    private Integer QuantidadeTotal;
     
     
     

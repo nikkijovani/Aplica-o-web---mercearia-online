@@ -5,23 +5,31 @@
  */
 package br.edu.iff.merceariaonline;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author aluno
  */
-public class Sessao {
+@Entity
+@Table(name = "sessao")
+public class Sessao implements Serializable {
 
     /**
      * @return the CodSessao
      */
-    public int getCodSessao() {
+    public Integer getCodSessao() {
         return CodSessao;
     }
 
     /**
      * @param CodSessao the CodSessao to set
      */
-    public void setCodSessao(int CodSessao) {
+    public void setCodSessao(Integer CodSessao) {
         this.CodSessao = CodSessao;
     }
 
@@ -38,6 +46,10 @@ public class Sessao {
     public void setNomeSessao(String NomeSessao) {
         this.NomeSessao = NomeSessao;
     }
-    private int CodSessao;
+    @Id
+    @Column(name = "ses_cd_sessao")
+    private Integer CodSessao;
+    @Id
+    @Column(name = "ses_nm_sessao")
     private String NomeSessao;   
 }
