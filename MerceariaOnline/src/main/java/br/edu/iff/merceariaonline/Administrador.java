@@ -11,4 +11,8 @@ package br.edu.iff.merceariaonline;
  */
 public class Administrador {
     
+    String CodAdministrador;
+    
+    
+    
 }
