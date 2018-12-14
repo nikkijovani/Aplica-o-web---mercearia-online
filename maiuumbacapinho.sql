@@ -1,4 +1,4 @@
---
+﻿--
 -- PostgreSQL database dump
 --
 
@@ -160,8 +160,6 @@ ALTER TABLE sessao OWNER TO postgres;
 -- Data for Name: administrador; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY administrador (adm_cd_administrador, adm_nm_nome, adm_nr_cpf, adm_nr_telefone, adm_ds_senha) FROM stdin;
-\.
 
 
 --
@@ -170,8 +168,7 @@ COPY administrador (adm_cd_administrador, adm_nm_nome, adm_nr_cpf, adm_nr_telefo
 -- Data for Name: cliente; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY cliente (clie_cd_cliente, clie_nm_nome, clie_dt_nascimento, clie_nr_telefone, clie_nr_cpf, clie_nr_rg, end_cd_endereco, clie_ds_senha, clie_ds_email) FROM stdin;
-\.
+
 
 
 --
@@ -180,8 +177,7 @@ COPY cliente (clie_cd_cliente, clie_nm_nome, clie_dt_nascimento, clie_nr_telefon
 -- Data for Name: compra; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY compra (comp_cd_compra, comp_dt_data, comp_vl_total, clie_cd_cliente) FROM stdin;
-\.
+
 
 
 --
@@ -190,8 +186,7 @@ COPY compra (comp_cd_compra, comp_dt_data, comp_vl_total, clie_cd_cliente) FROM 
 -- Data for Name: endereco; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY endereco (end_cd_endereco, end_nm_cidade, end_ds_cep, end_nm_rua, end_nr_casa, end_ds_complemento, end_nm_bairro, end_nm_estado) FROM stdin;
-\.
+
 
 
 --
@@ -200,8 +195,7 @@ COPY endereco (end_cd_endereco, end_nm_cidade, end_ds_cep, end_nm_rua, end_nr_ca
 -- Data for Name: item_comprado; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY item_comprado (item_cd_itemcomprado, item_nm_nome, item_nr_quantidade, item_nr_total, comp_cd_compra, prod_cd_produto) FROM stdin;
-\.
+
 
 
 --
@@ -210,8 +204,7 @@ COPY item_comprado (item_cd_itemcomprado, item_nm_nome, item_nr_quantidade, item
 -- Data for Name: produto; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY produto (prod_cd_produto, prod_nm_nome, prod_nm_marca, prod_vl_unidade, ses_cd_sessao) FROM stdin;
-\.
+
 
 
 --
@@ -220,8 +213,6 @@ COPY produto (prod_cd_produto, prod_nm_nome, prod_nm_marca, prod_vl_unidade, ses
 -- Data for Name: sessao; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY sessao (ses_nm_nome, ses_cd_sessao) FROM stdin;
-\.
 
 
 --
